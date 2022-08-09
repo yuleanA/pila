@@ -29,6 +29,9 @@ public class NewMain {
         
         pilap.desapilar();
         System.out.println("Pila\n"+pilap.toString());  
+    
+    
     }
+    
     
 }

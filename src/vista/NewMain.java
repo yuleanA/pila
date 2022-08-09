@@ -6,6 +6,7 @@
 package vista;
 
 import datos.Productos;
+import modelo.OperacionesPila;
 import modelo.Pila;
 
 /**
@@ -25,13 +26,16 @@ public class NewMain {
         pilap.apilar(new Productos("atun", 2, 5000));
         pilap.apilar(new Productos("Panal de huevo", 2, 5000));
         
-        System.out.println("Pila\n"+pilap.toString());
+        System.out.println("Pila Original\n"+pilap.toString());
         
-        pilap.desapilar();
-        System.out.println("Pila\n"+pilap.toString());  
-    
-    
+        //pilap.desapilar();
+       // System.out.println("Pila\n"+pilap.toString());  
+        
+        Pila<Productos> pd = OperacionesPila.duplicarPila(pilap);
+        System.out.println("Pila Duplicada\n"+ pd.toString());
+   
+        Pila<Productos> pi = OperacionesPila.invertirPila(pilap);
+        System.out.println("Pila Invertida\n"+ pi.toString());
     }
-    
     
 }

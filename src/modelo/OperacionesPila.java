@@ -5,6 +5,8 @@
  */
 package modelo;
 
+import datos.Productos;
+
 /**
  *
  * @author yulean.alvarez
@@ -41,4 +43,14 @@ public class OperacionesPila {
         }
         return pilaInvertida;
     } 
+    public static <T extends Base> double calcularValorTotal(Pila<T> PilaOriginal){
+        double totalValor= 0.0;
+        Pila<T> pilaDuplicada = duplicarPila(PilaOriginal);
+        while (!pilaDuplicada.estaVacia()){
+            T elemento = pilaDuplicada.desapilar();
+            Productos objp =(Productos)elemento;
+            totalValor += objp.getCantidadProducto()*objp.getValorProducto();
+        }
+        return totalValor;
+    }
 }

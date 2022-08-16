@@ -40,5 +40,5 @@ public class OperacionesPila {
             pilaInvertida.apilar(elemento);
         }
         return pilaInvertida;
-    }
+    } 
 }
